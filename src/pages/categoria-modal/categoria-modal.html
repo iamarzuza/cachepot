@@ -1,0 +1,37 @@
+<!--
+  Generated template for the CategoriaModal page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+        <button  ion-button (click)="close()" >
+            <ion-icon name="close"></ion-icon>
+        </button>
+    </ion-buttons>
+
+    <ion-title>Categoria</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+        <ion-label floating>Nome</ion-label>
+        <ion-input [(ngModel)]="categoria.nome" > </ion-input>
+    </ion-item>
+
+    <button ion-button block (click)="salvar()">Salvar</button>
+
+  </ion-list>
+
+
+
+</ion-content>

@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Categorias</ion-title>
+    <ion-title>Categorias novo</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,4 +15,26 @@
 
 <ion-content padding>
 
+  <ion-list >
+    <ion-item-sliding  *ngFor="let c of categorias">
+      <ion-item>
+          {{ c.nome }}
+      </ion-item>
+      <ion-item-options>
+          <button ion-button color="primary" (click)="modalCategoriaUpdate (c)" >
+              <ion-icon name="create"></ion-icon>
+          </button>
+          <button ion-button color="secondary" (click)="delCategoria(c)">
+              <ion-icon name="trash"></ion-icon>
+          </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+
+  <ion-fab right bottom >
+    <button ion-fab (click)="modalCategoria()" >
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
 </ion-content>

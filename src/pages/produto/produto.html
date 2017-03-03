@@ -15,4 +15,32 @@
 
 <ion-content padding>
 
+  <ion-list >
+    <ion-item-sliding  *ngFor="let p of produtos">
+      <ion-item>   <!-- | currency:'BRL':true:'1.2'   -->
+          <span  item-left >{{ p.nome }} </span>
+          <span  item-right >{{ p.preco | currency:'BRL':true:'1.2' }}  </span>
+      </ion-item>
+      <ion-item>
+        <img src="{{ urlfotos + p.foto }}"/>
+      </ion-item>
+
+      <ion-item-options>
+          <button ion-button color="primary" (click)="modalProdutoUpdate(p)" >
+              <ion-icon name="create"></ion-icon>
+          </button>
+          <button ion-button color="secondary" (click)="delProduto(p)">
+              <ion-icon name="trash"></ion-icon>
+          </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+
+  <ion-fab right bottom >
+    <button ion-fab (click)="modalProduto()" >
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+
 </ion-content>
